@@ -17,17 +17,14 @@ processors:
 exporters:
   debug:
     verbosity: basic
-  # OpenSearch exporter - writes traces as documents
   opensearch:
-    endpoints:
-      - ${OPENSEARCH_ENDPOINT}
-    auth:
-      authenticator: basicauth
-    # Traces will be written to: traces-*, traces-span-*, traces-service-*
-    index: traces
-    # Enable trace analytics
-    trace_analytics:
-      enabled: true
+    http:
+      endpoint: ${OPENSEARCH_ENDPOINT}
+      auth:
+        authenticator: basicauth
+    traces_index: ss4o_traces-default-default
+    sending_queue:
+      batch:
 
 extensions:
   basicauth:
