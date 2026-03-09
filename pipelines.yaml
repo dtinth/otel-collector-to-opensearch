@@ -18,9 +18,9 @@ span-pipeline:
     - otel_traces:
   sink:
     - opensearch:
-        hosts: ["${{OPENSEARCH_ENDPOINT}}"]
-        username: "${{OPENSEARCH_USERNAME}}"
-        password: "${{OPENSEARCH_PASSWORD}}"
+        hosts: ["${OPENSEARCH_ENDPOINT}"]
+        username: "${OPENSEARCH_USERNAME}"
+        password: "${OPENSEARCH_PASSWORD}"
         index_type: trace-analytics-raw
 
 service-map-pipeline:
@@ -31,7 +31,7 @@ service-map-pipeline:
     - service_map:
   sink:
     - opensearch:
-        hosts: ["${{OPENSEARCH_ENDPOINT}}"]
-        username: "${{OPENSEARCH_USERNAME}}"
-        password: "${{OPENSEARCH_PASSWORD}}"
+        hosts: ["${OPENSEARCH_ENDPOINT}"]
+        username: "${OPENSEARCH_USERNAME}"
+        password: "${OPENSEARCH_PASSWORD}"
         index_type: trace-analytics-service-map
