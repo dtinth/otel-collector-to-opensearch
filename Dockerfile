@@ -1,6 +1,6 @@
 FROM opensearchproject/data-prepper:latest
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends gettext-base && rm -rf /var/lib/apt/lists/*
+RUN dnf install -y gettext && dnf clean all
 USER data-prepper
 COPY data-prepper.yaml /usr/share/data-prepper/config/data-prepper.yaml
 COPY pipelines.yaml /usr/share/data-prepper/pipelines/pipelines.yaml.tmpl
