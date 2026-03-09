@@ -1,3 +1,4 @@
-FROM otel/opentelemetry-collector-contrib:latest
-COPY config.yaml /etc/otelcol/config.yaml
-CMD ["--config", "/etc/otelcol/config.yaml"]
+FROM opensearchproject/data-prepper:latest
+COPY data-prepper.yaml /usr/share/data-prepper/config/data-prepper.yaml
+COPY pipelines.yaml /usr/share/data-prepper/pipelines/pipelines.yaml
+EXPOSE 21890
