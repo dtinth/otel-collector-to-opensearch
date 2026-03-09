@@ -3,4 +3,4 @@ set -e
 
 envsubst < /usr/share/data-prepper/pipelines/pipelines.yaml.tmpl > /usr/share/data-prepper/pipelines/pipelines.yaml
 
-exec /usr/share/data-prepper/data-prepper "$@"
+exec /usr/share/data-prepper/bin/data-prepper "$@"
